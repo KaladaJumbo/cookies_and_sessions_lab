@@ -1,0 +1,16 @@
+<%=form_for :cart, url: "/" do |f|%>
+<%=f.label "product"%>
+<br>
+<%=f.text_field :product, name: "product", value: ""%>
+<br>
+<br>
+<%=f.submit "add to cart"%>
+<%end%>
+<br>
+<br>
+items in cart:
+<br>
+<%session[:cart].each do |item|%>
+    <%=item%>
+    <br>
+<%end%>
